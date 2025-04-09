@@ -58,7 +58,7 @@ class OrderController extends Controller
 
     public function destroy(Order $order)
     {
-        if ($order->status !== 'completed') {
+        if ($order->status !== OrderStatus::ORDERED->value) {
             return response()->json(['error' => 'Only completed orders can be deleted.'], 400);
         }
         $orderDeleted = $this->redProviderService->deleteOrder($order->id);
