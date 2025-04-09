@@ -35,4 +35,11 @@ return [
         ],
     ],
 
+    'red_provider' => [
+        'url' => env('RED_PROVIDER_URL', 'https://localhost:3000'),
+        'client_id' => env('RED_PROVIDER_CLIENT_ID', ''),
+        'client_secret' => env('RED_PROVIDER_CLIENT_SECRET', ''),
+        'use_mock' => env('RED_PROVIDER_USE_MOCK', false),
+    ],
+
 ];

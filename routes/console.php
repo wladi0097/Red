@@ -8,3 +8,5 @@ Artisan::command('inspire', function () {
     /** @var ClosureCommand $this */
     $this->comment(Inspiring::quote());
 })->purpose('Display an inspiring quote');
+
+Schedule::command('orders:sync-statuses')->everyFiveMinutes();
