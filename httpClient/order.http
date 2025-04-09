@@ -17,4 +17,4 @@ Content-Type: application/json
 GET {{PATH}}/orders/e7abd03b-86db-4bb4-b47e-130dc791ab9f
 
 ### Delete order
-DELETE {{PATH}}/orders/e7abd03b-86db-4bb4-b47e-130dc791ab9f
+DELETE {{PATH}}/orders/2821ee51-a58f-462a-b87d-e9a2b830046d

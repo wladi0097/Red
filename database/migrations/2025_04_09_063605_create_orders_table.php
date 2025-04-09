@@ -14,6 +14,7 @@ return new class extends Migration
         Schema::create('orders', function (Blueprint $table) {
             $table->uuid('id')->primary();
             $table->string('name');
+            $table->string('red_id');
             $table->enum('type', ['connector', 'vpn_connection']);
             $table->enum('status', ['ordered', 'processing', 'completed']);
             $table->timestamps();

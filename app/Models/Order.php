@@ -9,7 +9,8 @@ class Order extends Model
 {
     public $incrementing = false;
     protected $keyType = 'string';
-    protected $fillable = ['name', 'type', 'status'];
+    protected $fillable = ['red_id', 'name', 'type', 'status'];
+    protected $visible = ['id', 'name', 'type', 'status'];
 
     protected static function boot(): void
     {
