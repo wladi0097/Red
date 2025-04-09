@@ -1,0 +1,20 @@
+### Get all orders
+GET {{PATH}}/orders
+
+### Get all orders, sort by
+GET {{PATH}}/orders?name=x&sort_order=asc
+
+### Create order
+POST {{PATH}}/orders
+Content-Type: application/json
+
+{
+    "name": "testingAround",
+    "type": "connector"
+}
+
+### Get single order
+GET {{PATH}}/orders/e7abd03b-86db-4bb4-b47e-130dc791ab9f
+
+### Delete order
+DELETE {{PATH}}/orders/e7abd03b-86db-4bb4-b47e-130dc791ab9f
