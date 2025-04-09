@@ -58,14 +58,16 @@ class RedProviderService
             ->json('status');
     }
 
-    public function deleteOrder(string $id): void
+    public function deleteOrder(string $id): bool
     {
         if (env('RED_PROVIDER_USE_MOCK')) {
-            return;
+            return true;
         }
 
-        Http::withToken($this->getToken())
+        return Http::withToken($this->getToken())
             ->withOptions(['verify' => $this->certPath])
-            ->delete("$this->baseUrl/order/$id");
+            ->delete("$this->baseUrl/order/$id")
+            ->successful();
+
     }
 }

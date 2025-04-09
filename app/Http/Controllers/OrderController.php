@@ -61,8 +61,12 @@ class OrderController extends Controller
         if ($order->status !== 'completed') {
             return response()->json(['error' => 'Only completed orders can be deleted.'], 400);
         }
+        $orderDeleted = $this->redProviderService->deleteOrder($order->id);
 
-        $this->redProviderService->deleteOrder($order->id);
+        if(!$orderDeleted) {
+            return response()->json(['error' => 'There was an error deleting the order with the provider.'], Response::HTTP_INTERNAL_SERVER_ERROR);
+        }
+
         $order->delete();
         return response()->noContent();
     }
